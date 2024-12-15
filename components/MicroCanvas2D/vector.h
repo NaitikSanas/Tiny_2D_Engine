@@ -1,18 +1,25 @@
-#ifndef VECTOR_H
-#define VECTOR_H
-#include "stdio.h"
-#include "math.h"
+#ifndef VECTOR_MATH_LIBRARY_H
+#define VECTOR_MATH_LIBRARY_H
 
-typedef struct _2Dvec
-{
-    int x;
-    int y;
-}Vector2D_t;
+#include <stddef.h> // For size_t
 
-Vector2D_t vector_init(int x, int y);
-Vector2D_t add_vec(Vector2D_t vec1,Vector2D_t vec2);
-Vector2D_t sub_vec(Vector2D_t vec1,Vector2D_t vec2);
-void acc_vecx(Vector2D_t* vec, int x);
-void acc_vecy(Vector2D_t* vec, int y);
+// Define a structure to represent a vector
+typedef struct {
+    float *components;
+    size_t size;
+} Vector;
 
-#endif
+// Function declarations
+Vector create_vector(size_t size);
+void free_vector(Vector *v);
+
+Vector add_vectors(const Vector *v1, const Vector *v2);
+Vector subtract_vectors(const Vector *v1, const Vector *v2);
+float dot_product(const Vector *v1, const Vector *v2);
+float magnitude(const Vector *v);
+Vector scalar_multiply(const Vector *v, float scalar);
+Vector normalize(const Vector *v);
+
+void print_vector(const Vector *v);
+
+#endif // VECTOR_MATH_LIBRARY_H
