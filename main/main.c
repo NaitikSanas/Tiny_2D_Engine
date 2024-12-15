@@ -6,14 +6,13 @@
 #include "fonts_demo.h"
 #include "Vector_Demo.h"
 // #define RUN_APP_C 1
-// #define RUN_DESIGN_GAME_MAP_DEMO 1
+#define RUN_DESIGN_GAME_MAP_DEMO 1
 // #define RUN_SIMPLE_MENU_DEMO 1
 // #define RUN_FONTS_TESTING 1
 
 
 void app_main(){
-    vector_usage_demo();
-    
+
 
     #if RUN_APP_C
     uCanvas_Setup();

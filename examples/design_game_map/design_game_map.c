@@ -78,7 +78,7 @@ void uCanvas_Game_Design_Demo_Setup(){
     uCanvas_Sprite_Adjust_Contrast(&grass_sprite_obj,500);
     uCanvas_Sprite_Adjust_Contrast(&tree_sprite_obj,500);
 
-    uCanvas_Pause_Render_Engine();
+    // uCanvas_Pause_Render_Engine();
     build_rpg_map();
     character = New_uCanvas_2DSprite(&character_sprite_obj2,50,150);
 
@@ -87,7 +87,7 @@ void uCanvas_Game_Design_Demo_Setup(){
     uCanvas_universal_obj_t* tree3 = New_uCanvas_2DSprite(&tree_sprite_obj,-30,180);
     uCanvas_universal_obj_t* tree2 = New_uCanvas_2DSprite(&tree_sprite_obj,20,180);
     fps_counter = New_uCanvas_2DTextbox("",10,20);
-    uCanvas_Resume_Render_Engine();
+    // uCanvas_Resume_Render_Engine();
     printf("done\r\n");
     uCanvas_Delay(1);
     uCanvas_Init_PushButton(45);
