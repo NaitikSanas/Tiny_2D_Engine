@@ -18,13 +18,13 @@ void create_menu(selection_menu_obj_t* menu_obj,uCanvas_universal_obj_t* cursor_
     for (int i = 0; i < menu_obj->active_elements; i++)
     {
         sprintf(buf,"item %d",i);
-        printf("added %d at x %d y %d\r\n",i,menu_obj->menu_position_x+menu_obj->text_offset_x,menu_obj->menu_position_y+(i*menu_obj->span_y));
+        // printf("added %d at x %d y %d\r\n",i,menu_obj->menu_position_x+menu_obj->text_offset_x,menu_obj->menu_position_y+(i*menu_obj->span_y));
         menu_obj->content[i] = New_uCanvas_2DTextbox(buf,menu_obj->menu_position_x+menu_obj->text_offset_x,menu_obj->menu_position_y+(i*menu_obj->span_y));
     }
     menu_obj->cursor = cursor_object;  
     if(menu_obj->enable_index_disp){
         printf("enable_index_disp true\r\n");
-        menu_obj->index_disp = New_uCanvas_2DTextbox("--",0,0);
+        menu_obj->index_disp = New_uCanvas_2DTextbox("--",10,20);
     }
     // New_uCanvas_2DRectangle(menu_obj->title_position_x,menu_obj->title_position_y,menu_obj->span_y,50);
     menu_obj->title = New_uCanvas_2DTextbox("",menu_obj->title_position_x,menu_obj->title_position_y);

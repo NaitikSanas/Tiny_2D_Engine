@@ -9,8 +9,8 @@
     #define uCanvas_Universal_Object    (uCanvas_universal_obj_t*)malloc(sizeof(uCanvas_universal_obj_t))
     #define uCanvas_Scene_Object        (uCanvas_Scene_t*)malloc(sizeof(uCanvas_Scene_t)) 
     
-    void uCanvas_lock_scene();
-    void uCanvas_unlock_scene();
+    void uCanvas_Pause_Render_Engine();
+    void uCanvas_Resume_Render_Engine();
 
     /*Starts Rendering Engine and Initializes Display*/
     void start_uCanvas_engine(void);

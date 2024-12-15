@@ -53,7 +53,7 @@ uCanvas_universal_obj_t* blocks_component[32]={0};
 
 void pan(int dir){
     int64_t start = esp_timer_get_time();
-    uCanvas_lock_scene();
+    uCanvas_Pause_Render_Engine();
     for (int j = 0; j < 10; j++)
     {
         
@@ -70,7 +70,7 @@ void pan(int dir){
        
         vTaskDelay(pdMS_TO_TICKS(9));
     }
-     uCanvas_unlock_scene();
+     uCanvas_Resume_Render_Engine();
     printf("--time elapsed %.2f\r\n",1000000.0/(esp_timer_get_time()-start));
     
 }

@@ -7,11 +7,11 @@ extern TaskHandle_t uCanvas_taskhandle;
 #define LOCK_ACTIVE_SCENEB_BUF      xSemaphoreTake(active_scene_mutex,portMAX_DELAY)
 #define UNLOCK_ACTIVE_SCENEB_BUF    xSemaphoreGive(active_scene_mutex);
 
-void uCanvas_lock_scene(){
-    LOCK_ACTIVE_SCENEB_BUF;
+void uCanvas_Pause_Render_Engine(){
+    uCanvas_Pause_Task(uCanvas_taskhandle);
 }
-void uCanvas_unlock_scene(){
-    UNLOCK_ACTIVE_SCENEB_BUF;
+void uCanvas_Resume_Render_Engine(){
+    vTaskResume(uCanvas_taskhandle);
 }
 void uCanvas_delete_object(uCanvas_universal_obj_t* obj){
     if(active_scene != NULL){

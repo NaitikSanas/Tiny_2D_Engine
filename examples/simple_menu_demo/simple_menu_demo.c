@@ -17,11 +17,11 @@ static uint16_t selector_icon[9*9] = {   \
     1,1,1,1,1,0,0,0,0 
 };
 
-#define MENU_POSITION_X 5
-#define MENU_POSITION_Y 18
+#define MENU_POSITION_X 20
+#define MENU_POSITION_Y 50
 #define TEXT_OFFSET_X 2
 #define SPAN_X 5
-#define SPAN_Y 10
+#define SPAN_Y 16
 
 static selection_menu_obj_t menu_1;
 static selection_menu_obj_t menu_2;
@@ -51,7 +51,8 @@ void create_menu_1_instace(void){
     menu_1.scroll_up_handler    = onScrollUp_Menu_1;
     menu_1.scroll_down_handler  = onScrollDown_Menu_1;
     menu_1.select_btn_wait_to_release = true;
-
+    menu_1.title_position_x = MENU_POSITION_X;
+    menu_1.title_position_y = 50;
     menu_set_active_elements(&menu_1,32); //Set Active Members of menu object
     menu_set_enable_cursor_index_text(&menu_1,true);//shows cursor position in corner
     menu_add_gpio_control(&menu_1,47,48,45); //Add GPIO to control UP/DOWN/SELECT navigation
@@ -66,10 +67,10 @@ void create_menu_1_instace(void){
     /*Instantiate Menu Object*/
     create_menu(&menu_1,selector1);
     
-    menu_set_title(&menu_1,"< Menu_1-Demo >"   ,20,0);
+    menu_set_title(&menu_1,"< Menu_1-Demo >"   ,20,20);
     
-    New_uCanvas_2DLine(0,MENU_POSITION_Y-8,128,MENU_POSITION_Y-8);
-    New_uCanvas_2DLine(0,MENU_POSITION_Y-7,128,MENU_POSITION_Y-7);
+    // New_uCanvas_2DLine(0,MENU_POSITION_Y-8,128,MENU_POSITION_Y-8);
+    // New_uCanvas_2DLine(0,MENU_POSITION_Y-7,128,MENU_POSITION_Y-7);
 
     /* Add Content in your menu object */
     menu_set_content(&menu_1,"Brightness",0);
@@ -100,7 +101,8 @@ void create_menu_2_instace(void){
     menu_2.text_offset_x = 20;
     menu_2.click_handler = onContentClicked_Menu_2;
     menu_2.select_btn_wait_to_release = false;
-
+    menu_1.title_position_x = MENU_POSITION_X;
+    menu_1.title_position_y = 10;
     menu_set_active_elements(&menu_2,10);
     menu_set_enable_cursor_index_text(&menu_2,true);
     menu_add_gpio_control(&menu_2,47,48,45);
@@ -112,8 +114,8 @@ void create_menu_2_instace(void){
     create_menu(&menu_2,selector2);
     menu_set_title(&menu_2,"< Menu_2-Demo >"   ,20,0);
     menu_set_content(&menu_2,"GOTO MENU-1",9);
-    New_uCanvas_2DLine(0,MENU_POSITION_Y-8,128,MENU_POSITION_Y-8);
-    New_uCanvas_2DLine(0,MENU_POSITION_Y-7,128,MENU_POSITION_Y-7);
+    // New_uCanvas_2DLine(0,MENU_POSITION_Y-8,128,MENU_POSITION_Y-8);
+    // New_uCanvas_2DLine(0,MENU_POSITION_Y-7,128,MENU_POSITION_Y-7);
     // New_uCanvas_2DLine(85,MENU_POSITION_Y-3,85,64);
 }
 
