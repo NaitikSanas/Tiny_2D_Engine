@@ -7,10 +7,8 @@
 #include "math.h"
 #include "esp_log.h"
 #include "uCanvas_api.h"
-#include "uCanvas_Physix.h" 
 #include "uCanvas_User_IO.h"
 #include "simple_menu.h"
-#include "ssd1306.h"
 #include "esp_system.h "
 void menu_task(selection_menu_obj_t* menu_obj);
 void create_menu(selection_menu_obj_t* menu_obj,uCanvas_universal_obj_t* cursor_object){

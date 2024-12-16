@@ -12,7 +12,6 @@
 #include "math.h"
 #include "esp_log.h"
 #include "uCanvas_api.h"
-#include "uCanvas_Physix.h" 
 #include "uCanvas_User_IO.h"
 
 void uCanvas_Setup(void);
